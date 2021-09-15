@@ -9,20 +9,32 @@ const App = () => {
 	const [value, setValue] = useState('');
 	const [data, setData] = useState({});
 
+	const dataFetching = async (query) => {
+		const data = await axios
+			.get(`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_API_KEY}&${query}=${value}`)
+			.then((res) => res.data)
+			.catch((err) => console.log(err));
+		setData(data);
+		setValue('');
+	};
+
+	const validate = () => {
+		if (
+			/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(
+				value
+			)
+		)
+			dataFetching('ipAddress');
+		else if (/[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+/.test(value))
+			dataFetching('domain');
+	};
+
 	const submitHandler = async () => {
 		if (value.trim() === '') {
 			setData({});
 			return setValue('');
 		}
-
-		const data = await axios
-			.get(
-				`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_API_KEY}&ipAddress=${value}`
-			)
-			.then((res) => res.data)
-			.catch((err) => console.log(err));
-		setData(data);
-		setValue('');
+		validate();
 	};
 
 	return (
