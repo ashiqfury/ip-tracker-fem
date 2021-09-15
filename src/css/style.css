@@ -20,3 +20,82 @@ body {
   background-color: #eee;
   background-position: top center;
 }
+
+.header {
+  width: 100%;
+}
+.header--text {
+  text-align: center;
+  margin-top: 20px;
+  color: white;
+  font-size: 24px;
+}
+
+.inputs {
+  width: 85%;
+  height: 40px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputs .inputs--input {
+  flex: 6;
+  height: 100%;
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  border-radius: 10px 0 0 10px;
+}
+.inputs .inputs--input::placeholder {
+  color: #969696;
+  font-size: 14px;
+}
+.inputs .inputs--btn {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 0 10px 10px 0;
+  background-color: black;
+  cursor: pointer;
+}
+
+.infos {
+  width: 85%;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+.infos .info {
+  flex: 1;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.infos .info--head {
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 500;
+  color: #969696;
+  letter-spacing: 1px;
+}
+.infos .info--text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2b2b2b;
+  margin-top: 3px;
+}
+.infos .info:last-child {
+  padding-bottom: 0;
+}

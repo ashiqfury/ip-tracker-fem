@@ -1,0 +1,44 @@
+.header {
+	width: 100%;
+	&--text {
+		text-align: center;
+		margin-top: 20px;
+		color: white;
+		font-size: 24px;
+	}
+}
+
+.inputs {
+	$radius: 10px;
+
+	width: 85%;
+	height: 40px;
+	margin: 20px auto;
+	@include flex(center, center);
+
+	.inputs--input {
+		flex: 6;
+		height: 100%;
+		font-size: 16px;
+		padding: 10px 15px;
+		border: none;
+		outline: none;
+		border-radius: $radius 0 0 $radius;
+
+		&::placeholder {
+			color: $darkGray;
+			font-size: 14px;
+		}
+	}
+	.inputs--btn {
+		flex: 1;
+		height: 100%;
+		@include flex(center, center);
+		padding: 10px;
+		border: none;
+		outline: none;
+		border-radius: 0 $radius $radius 0;
+		background-color: black;
+		cursor: pointer;
+	}
+}
