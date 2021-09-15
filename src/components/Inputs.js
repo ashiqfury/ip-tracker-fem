@@ -6,6 +6,11 @@ const Inputs = ({ value, setValue, submitHandler }) => {
 		setValue(e.target.value);
 	};
 
+	const keyHandler = (e) => {
+		if (e.keyCode === 13) submitHandler();
+		return;
+	};
+
 	return (
 		<section className="inputs">
 			<input
@@ -13,6 +18,7 @@ const Inputs = ({ value, setValue, submitHandler }) => {
 				type="text"
 				value={value}
 				onChange={changeHandler}
+				onKeyDown={keyHandler}
 				placeholder="192.212.174.101"
 			/>
 			<button className="inputs--btn btn" onClick={submitHandler}>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import Inputs from './components/Inputs';
 import Info from './components/Info';
@@ -7,8 +7,23 @@ import './css/style.css';
 
 const App = () => {
 	const [value, setValue] = useState('');
+	const [data, setData] = useState({});
 
-	const submitHandler = () => {};
+	const submitHandler = async () => {
+		if (value.trim() === '') {
+			setData({});
+			return setValue('');
+		}
+
+		const data = await axios
+			.get(
+				`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_API_KEY}&ipAddress=${value}`
+			)
+			.then((res) => res.data)
+			.catch((err) => console.log(err));
+		setData(data);
+		setValue('');
+	};
 
 	return (
 		<div className="container">
@@ -17,10 +32,10 @@ const App = () => {
 			</header>
 			<Inputs value={value} setValue={setValue} submitHandler={submitHandler} />
 			<section className="infos">
-				<Info head="Ip Address" text={value} />
-				<Info head="Location" text={value} />
-				<Info head="Timezone" text={value} />
-				<Info head="Isp" text={value} />
+				<Info head="Ip Address" text={data?.ip} />
+				<Info head="Location" text={data?.location?.region} text2={data?.location?.city} />
+				<Info head="Timezone" text={data?.location?.timezone} zone />
+				<Info head="Isp" text={data?.isp} />
 			</section>
 			<Map />
 		</div>
