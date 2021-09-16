@@ -19,7 +19,8 @@ const Inputs = ({ value, setValue, submitHandler }) => {
 				value={value}
 				onChange={changeHandler}
 				onKeyDown={keyHandler}
-				placeholder="192.212.174.101"
+				placeholder="Enter domain or ip address"
+				autoFocus
 			/>
 			<button className="inputs--btn btn" onClick={submitHandler}>
 				<img src={arrow} alt="arrow" />

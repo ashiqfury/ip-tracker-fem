@@ -15,6 +15,11 @@
 	height: 40px;
 	margin: 20px auto;
 	@include flex(center, center);
+	border-radius: $radius;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15), 0 0 20px rgba(0, 0, 0, 0.15);
+	@media only screen and (min-width: 768px) {
+		width: 35%;
+	}
 
 	.inputs--input {
 		flex: 6;

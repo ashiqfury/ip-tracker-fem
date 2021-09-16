@@ -12,13 +12,29 @@ html {
 
 body {
   width: 100%;
-  min-height: 100vh;
+  max-height: 100vh;
   font-family: "Rubik", sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
   background: url("../images/pattern-bg.png") no-repeat;
   background-size: 100% 250px;
   background-color: #eee;
   background-position: top center;
+}
+@media only screen and (min-width: 768px) {
+  body {
+    background-size: 100% 180px;
+  }
+}
+
+.mapclass {
+  position: relative;
+  z-index: -1;
+  top: -120px;
+}
+@media only screen and (min-width: 768px) {
+  .mapclass {
+    top: -50px;
+  }
 }
 
 .header {
@@ -38,6 +54,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15), 0 0 20px rgba(0, 0, 0, 0.15);
+}
+@media only screen and (min-width: 768px) {
+  .inputs {
+    width: 35%;
+  }
 }
 .inputs .inputs--input {
   flex: 6;
@@ -77,6 +100,13 @@ body {
   background: white;
   border-radius: 10px;
   padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15), 0 0 20px rgba(0, 0, 0, 0.15);
+}
+@media only screen and (min-width: 768px) {
+  .infos {
+    width: 90%;
+    flex-direction: row;
+  }
 }
 .infos .info {
   flex: 1;
@@ -85,16 +115,16 @@ body {
 }
 .infos .info--head {
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 8px;
   font-weight: 500;
   color: #969696;
   letter-spacing: 1px;
 }
 .infos .info--text {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   color: #2b2b2b;
-  margin-top: 3px;
+  margin-top: 2px;
 }
 .infos .info:last-child {
   padding-bottom: 0;

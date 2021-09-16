@@ -27,6 +27,7 @@ const App = () => {
 			dataFetching('ipAddress');
 		else if (/[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9](?:\.[a-zA-Z]{2,})+/.test(value))
 			dataFetching('domain');
+		else setValue('');
 	};
 
 	const submitHandler = async () => {
@@ -49,7 +50,7 @@ const App = () => {
 				<Info head="Timezone" text={data?.location?.timezone} zone />
 				<Info head="Isp" text={data?.isp} />
 			</section>
-			<Map />
+			{data ? <Map data={data} /> : <></>}
 		</div>
 	);
 };

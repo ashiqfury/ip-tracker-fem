@@ -12,11 +12,23 @@ html {
 
 body {
 	width: 100%;
-	min-height: 100vh;
+	max-height: 100vh;
 	font-family: $font;
-	overflow-x: hidden;
+	overflow: hidden;
 	background: url('../images/pattern-bg.png') no-repeat;
 	background-size: 100% 250px;
 	background-color: #eee;
 	background-position: top center;
+	@media only screen and (min-width: 768px) {
+		background-size: 100% 180px;
+	}
+}
+
+.mapclass {
+	position: relative;
+	z-index: -1;
+	top: -120px;
+	@media only screen and (min-width: 768px) {
+		top: -50px;
+	}
 }

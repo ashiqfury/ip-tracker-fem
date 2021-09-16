@@ -9,6 +9,11 @@
 	background: white;
 	border-radius: $radius;
 	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15), 0 0 20px rgba(0, 0, 0, 0.15);
+	@media only screen and (min-width: 768px) {
+		width: 90%;
+		flex-direction: row;
+	}
 
 	.info {
 		flex: 1;
@@ -17,16 +22,16 @@
 
 		&--head {
 			text-transform: uppercase;
-			font-size: 10px;
+			font-size: 8px;
 			font-weight: $md;
 			color: $darkGray;
 			letter-spacing: 1px;
 		}
 		&--text {
-			font-size: 20px;
+			font-size: 16px;
 			font-weight: $lg;
 			color: $veryDarkGray;
-			margin-top: 3px;
+			margin-top: 2px;
 		}
 		&:last-child {
 			padding-bottom: 0;
