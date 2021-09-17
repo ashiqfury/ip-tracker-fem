@@ -13,6 +13,8 @@ Users should be able to:
 
 ### Screenshot
 
+Coming Soon 😁
+
 ### Links
 
 - Solution URL : [ip-tracker](https://github.com/ashiqfury/ip-tracker-fem/)
@@ -40,3 +42,7 @@ I learned how to embed map in my page using Leaflet Library and also I learned h
 - Instagram - [@_a.s.h.i.q\_\_f.u.r.y_](https://www.instagram.com/_a.s.h.i.q__f.u.r.y_)
 - Frontend Mentor - [@ashiqfury](https://www.frontendmentor.io/profile/ashiqfury)
 - Github - [@ashiqfury](https://www.github.com/ashiqfury)
+
+## Small Credit
+
+- Icon on Title Bar - [flaticon](https://flaticon.com/)
