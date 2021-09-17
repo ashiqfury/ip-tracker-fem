@@ -45,5 +45,9 @@
 		border-radius: 0 $radius $radius 0;
 		background-color: black;
 		cursor: pointer;
+		transition: 250ms;
+		&:hover {
+			background: #252525;
+		}
 	}
 }

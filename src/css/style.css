@@ -87,6 +87,10 @@ body {
   border-radius: 0 10px 10px 0;
   background-color: black;
   cursor: pointer;
+  transition: 250ms;
+}
+.inputs .inputs--btn:hover {
+  background: #252525;
 }
 
 .infos {
@@ -104,14 +108,26 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .infos {
-    width: 90%;
+    width: 70%;
     flex-direction: row;
+    align-items: stretch;
+    padding: 20px;
   }
 }
 .infos .info {
   flex: 1;
   text-align: center;
   padding-bottom: 10px;
+}
+@media only screen and (min-width: 768px) {
+  .infos .info {
+    padding: 0 20px;
+    text-align: left;
+    border-right: 1.5px solid rgba(0, 0, 0, 0.15);
+  }
+}
+.infos .info:last-child {
+  border: none;
 }
 .infos .info--head {
   text-transform: uppercase;
@@ -125,6 +141,11 @@ body {
   font-weight: 700;
   color: #2b2b2b;
   margin-top: 2px;
+}
+@media only screen and (min-width: 768px) {
+  .infos .info--text {
+    margin-top: 4px;
+  }
 }
 .infos .info:last-child {
   padding-bottom: 0;

@@ -5,10 +5,7 @@ import markerIcon from '../images/icon-location.svg';
 
 const Map = ({ data }) => {
 	const style = {
-		height: '450px',
-		// position: 'relative',
-		// top: '-180px',
-		// zIndex: '-1',
+		height: '460px',
 	};
 
 	let [lat, lng] = [8.741222, 77.694626];
