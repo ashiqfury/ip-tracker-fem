@@ -5,7 +5,7 @@ import markerIcon from '../images/icon-location.svg';
 
 const Map = ({ data }) => {
 	const style = {
-		height: '460px',
+		height: '480px',
 	};
 
 	let [lat, lng] = [8.741222, 77.694626];
@@ -29,7 +29,7 @@ const Map = ({ data }) => {
 	});
 
 	useEffect(() => {
-		let leafletMap = L.map('mapid').setView([lat, lng], 13);
+		let leafletMap = L.map('mapid', { zoomControl: false }).setView([lat, lng], 13);
 		const accessToken = process.env.REACT_APP_TOKEN;
 
 		L.tileLayer(

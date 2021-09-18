@@ -28,7 +28,6 @@ body {
 
 .mapclass {
   position: relative;
-  z-index: -1;
   top: -120px;
 }
 @media only screen and (min-width: 768px) {
@@ -94,6 +93,8 @@ body {
 }
 
 .infos {
+  position: relative;
+  z-index: 9999;
   width: 85%;
   position: relative;
   margin: 0 auto;
